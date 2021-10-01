@@ -10,31 +10,31 @@ function Header() {
 
     return (
         <Container>
-            <a>
+            <a href="/">
                 <img src="/images/logo.svg" alt="" />
             </a>
             <Menu>
                 {cars && cars.map((car, index) =>
-                    <a key={index} href="#">{car}</a>                
+                    <a key={index} href="/">{car}</a>                
                 )}
             </Menu>
             <RightMenu>
-                <a href="#">Shop</a>
-                <a href="#">Tesla Account</a>
-                <a class="fas fa-bars" onClick={() => setBurgerStatus(true)}></a>
+                <a href="/">Shop</a>
+                <a href="/">Tesla Account</a>
+                <p class="fas fa-bars" onClick={() => setBurgerStatus(true)}></p>
             </RightMenu>
             <BurgerNav show={burgerStatus}>
                 <CloseWrapper>
-                   <a class="fas fa-times" onClick={() => setBurgerStatus(false)}></a>
+                   <p href="/" class="fas fa-times" onClick={() => setBurgerStatus(false)}></p>
                 </CloseWrapper>
                 {cars && cars.map((car, index) =>
-                <li key={index}><a href='#'>{car}</a></li>             
+                <li key={index}><a href='/'>{car}</a></li>             
                 )}
-                <li><a href='#'>Existing Inventory</a></li>
-                <li><a href='#'>Used Inventory</a></li>
-                <li><a href='#'>Trade-in</a></li>
-                <li><a href='#'>Cybertruck</a></li>
-                <li><a href='#'>Roadster</a></li>
+                <li><a href='/'>Existing Inventory</a></li>
+                <li><a href='/'>Used Inventory</a></li>
+                <li><a href='/'>Trade-in</a></li>
+                <li><a href='/'>Cybertruck</a></li>
+                <li><a href='/'>Roadster</a></li>
             </BurgerNav>
 
         </Container>
@@ -54,7 +54,10 @@ const Container = styled.div`
     left: 0;
     right: 0;
     z-index: 1;
-
+    
+    p{
+        cursor: pointer;
+    }
 `
 
 const Menu = styled.div`
